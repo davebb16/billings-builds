@@ -32,11 +32,11 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 cursor-pointer group">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center shadow-lg shadow-yellow-500/20">
-              <Zap className="h-4 w-4 text-zinc-950 fill-zinc-950" />
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center shadow-lg shadow-red-500/25">
+              <Zap className="h-4 w-4 text-white fill-white" />
             </div>
             <span className="font-bold text-base tracking-tight text-white">
-              Billings<span className="text-yellow-400">Builds</span>
+              Billings<span className="text-red-500">Builds</span>
             </span>
           </Link>
 
@@ -59,7 +59,7 @@ export function Navbar() {
             <Link to="/contact">
               <Button
                 size="sm"
-                className="bg-yellow-400 text-zinc-950 hover:bg-yellow-300 font-semibold cursor-pointer shadow-lg shadow-yellow-500/20 transition-all duration-200"
+                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer shadow-lg shadow-red-500/25 transition-all duration-200"
               >
                 Start a Project
               </Button>
@@ -90,7 +90,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full mt-2 bg-yellow-400 text-zinc-950 hover:bg-yellow-300 font-semibold cursor-pointer">
+              <Button className="w-full mt-2 bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer">
                 Start a Project
               </Button>
             </Link>

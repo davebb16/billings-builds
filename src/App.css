@@ -35,9 +35,6 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  /* Brand gold */
-  --color-gold: var(--gold);
-  --color-gold-bright: var(--gold-bright);
 }
 
 :root {
@@ -51,9 +48,9 @@
   --popover: oklch(0.115 0 0);
   --popover-foreground: oklch(0.985 0 0);
 
-  /* Gold as primary */
-  --primary: oklch(0.795 0.166 85);
-  --primary-foreground: oklch(0.071 0 0);
+  /* Red as primary */
+  --primary: oklch(0.638 0.239 25);
+  --primary-foreground: oklch(0.985 0 0);
 
   --secondary: oklch(0.196 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -64,20 +61,26 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.795 0.166 85);
+  --ring: oklch(0.638 0.239 25);
 
-  --chart-1: oklch(0.795 0.166 85);
+  --chart-1: oklch(0.638 0.239 25);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-
-  /* Brand */
-  --gold: oklch(0.655 0.149 87);
-  --gold-bright: oklch(0.795 0.166 85);
 }
 
 @layer base {
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes float-offset {
+    0%, 100% { transform: translateY(0px); }
+    35% { transform: translateY(-10px); }
+    70% { transform: translateY(6px); }
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
@@ -97,13 +100,24 @@
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  .gold-gradient-text {
-    @apply bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent;
+  .accent-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f87171 0%, #f43f5e 50%, #e11d48 100%);
   }
 
   .glass-card {
     background: oklch(1 0 0 / 4%);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid oklch(1 0 0 / 10%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-float-slow {
+      animation: float-slow 6s ease-in-out infinite;
+    }
+    .animate-float-offset {
+      animation: float-offset 7.5s ease-in-out 1.5s infinite;
+    }
   }
 }

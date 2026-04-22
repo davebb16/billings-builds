@@ -30,11 +30,11 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-2.5">
-            <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center">
-              <Zap className="h-3.5 w-3.5 text-zinc-950 fill-zinc-950" />
+            <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center">
+              <Zap className="h-3.5 w-3.5 text-white fill-white" />
             </div>
             <span className="font-bold text-sm text-white">
-              Billings<span className="text-yellow-400">Builds</span>
+              Billings<span className="text-red-500">Builds</span>
               <span className="text-zinc-500 font-normal ml-1">LLC</span>
             </span>
           </div>
@@ -64,7 +64,7 @@ export function Footer() {
                 aria-label={label}
                 target={href.startsWith('mailto') ? undefined : '_blank'}
                 rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="h-8 w-8 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-yellow-400 hover:border-yellow-400/30 transition-all duration-200 cursor-pointer"
+                className="h-8 w-8 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-red-500 hover:border-red-500/30 transition-all duration-200 cursor-pointer"
               >
                 <Icon className="h-4 w-4" />
               </a>
