@@ -30,12 +30,17 @@ You are working in the **Billings Builds** site — a React + Vite + TypeScript 
   - Co-locate queries in hooks or components
 
 ## Brand & Design System
-<!-- Fill this section in once branding is established -->
-- **Primary brand colors**: (define as CSS vars in `App.css`, map in `@theme inline`)
-- **Section max-width**: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` (also available as `.section-container` utility class in `App.css`)
-- **Responsive breakpoints**: Mobile-first. `md:` for desktop nav visibility, `lg:` for layout shifts
-- **CSS utility classes** (defined in `App.css` `@layer components`):
-  - `.section-container` — standard page-width container
+- **Theme**: Dark-first premium agency. No light mode toggle needed.
+- **Background**: `oklch(0.071 0 0)` ≈ `#09090B` (zinc-950)
+- **Primary / Gold accent**: `oklch(0.795 0.166 85)` ≈ `#EAB308` (yellow-500) — used for CTAs, icons, highlights
+- **Card surface**: `oklch(0.115 0 0)` ≈ `#18181B` (zinc-900)
+- **Muted text**: `oklch(0.556 0 0)` ≈ `#71717A` (zinc-500)
+- **Border**: `oklch(1 0 0 / 8%)` — subtle white at 8% opacity
+- **Glass card pattern**: `.glass-card` utility — `bg-white/4 backdrop-blur-xl border border-white/10`
+- **Gold gradient text**: `.gold-gradient-text` — `bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent`
+- **Section max-width**: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` (`.section-container`)
+- **Responsive breakpoints**: Mobile-first. `md:` for desktop nav, `lg:` for layout shifts
+- **Primary button**: `bg-yellow-400 text-zinc-950 hover:bg-yellow-300 font-bold` + shadow `shadow-yellow-500/20`
 
 ## Project Structure
 ```
