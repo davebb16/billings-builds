@@ -144,8 +144,8 @@ function ContactForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center text-center py-16 px-8 h-full min-h-[500px]">
-        <div className="h-16 w-16 rounded-full bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center mb-6">
-          <CheckCircle2 className="h-8 w-8 text-yellow-400" />
+        <div className="h-16 w-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6">
+          <CheckCircle2 className="h-8 w-8 text-red-400" />
         </div>
         <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
         <p className="text-zinc-400 max-w-sm leading-relaxed">
@@ -178,12 +178,12 @@ function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Full Name <span className="text-yellow-400">*</span>
+                  Full Name <span className="text-red-400">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="David Billings"
-                    className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-yellow-400/50 focus:ring-yellow-400/20 transition-colors"
+                    placeholder="John Smith"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
                     {...field}
                   />
                 </FormControl>
@@ -197,13 +197,13 @@ function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Email <span className="text-yellow-400">*</span>
+                  Email <span className="text-red-400">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="email"
                     placeholder="you@example.com"
-                    className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-yellow-400/50 focus:ring-yellow-400/20 transition-colors"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
                     {...field}
                   />
                 </FormControl>
@@ -226,7 +226,7 @@ function ContactForm() {
                 <Input
                   type="tel"
                   placeholder="+1 (555) 000-0000"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-yellow-400/50 focus:ring-yellow-400/20 transition-colors"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
                   {...field}
                 />
               </FormControl>
@@ -243,11 +243,11 @@ function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Project Type <span className="text-yellow-400">*</span>
+                  Project Type <span className="text-red-400">*</span>
                 </FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-yellow-400/50 focus:ring-yellow-400/20 cursor-pointer">
+                    <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-red-500/50 focus:ring-red-500/20 cursor-pointer">
                       <SelectValue placeholder="Select type" className="text-zinc-600" />
                     </SelectTrigger>
                   </FormControl>
@@ -273,11 +273,11 @@ function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Budget Range <span className="text-yellow-400">*</span>
+                  Budget Range <span className="text-red-400">*</span>
                 </FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-yellow-400/50 focus:ring-yellow-400/20 cursor-pointer">
+                    <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-red-500/50 focus:ring-red-500/20 cursor-pointer">
                       <SelectValue placeholder="Select budget" className="text-zinc-600" />
                     </SelectTrigger>
                   </FormControl>
@@ -306,13 +306,13 @@ function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-zinc-300 text-sm font-medium">
-                Project Details <span className="text-yellow-400">*</span>
+                Project Details <span className="text-red-400">*</span>
               </FormLabel>
               <FormControl>
                 <Textarea
                   rows={5}
                   placeholder="Tell me about your project — what are you building, what problem does it solve, and what's your timeline?"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-yellow-400/50 focus:ring-yellow-400/20 transition-colors resize-none"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors resize-none"
                   {...field}
                 />
               </FormControl>
@@ -343,8 +343,8 @@ function ContactForm() {
           size="lg"
           disabled={mutation.isPending}
           className={cn(
-            'w-full bg-yellow-400 text-zinc-950 hover:bg-yellow-300 font-bold text-base py-6 cursor-pointer',
-            'shadow-lg shadow-yellow-500/20 transition-all duration-200',
+            'w-full bg-red-500 text-white hover:bg-red-400 font-semibold text-base py-6 cursor-pointer backdrop-blur-sm',
+            'shadow-md shadow-red-500/10 transition-all duration-200',
             'disabled:opacity-60 disabled:cursor-not-allowed',
           )}
         >
@@ -379,13 +379,13 @@ function ContactPage() {
         <div className="text-center max-w-2xl mx-auto">
           <Badge
             variant="outline"
-            className="border-yellow-400/30 text-yellow-400 bg-yellow-400/10 mb-4"
+            className="border-white/10 text-zinc-500 bg-transparent mb-4"
           >
             Get in Touch
           </Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5">
             Let's Build{' '}
-            <span className="gold-gradient-text">Something Great</span>
+            <span className="accent-gradient-text">Something Great</span>
           </h1>
           <p className="text-zinc-400 text-lg leading-relaxed">
             Have a project in mind? Fill out the form and I'll get back to you within 24 hours.
@@ -405,8 +405,8 @@ function ContactPage() {
                 key={label}
                 className="flex gap-4 p-5 rounded-2xl glass-card hover:bg-white/[0.06] transition-all duration-300"
               >
-                <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center">
-                  <Icon className="h-5 w-5 text-yellow-400" />
+                <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center">
+                  <Icon className="h-5 w-5 text-zinc-400" />
                 </div>
                 <div>
                   <p className="text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">
@@ -415,7 +415,7 @@ function ContactPage() {
                   {href ? (
                     <a
                       href={href}
-                      className="text-white font-medium hover:text-yellow-400 transition-colors cursor-pointer text-sm"
+                      className="text-white font-medium hover:text-red-400 transition-colors cursor-pointer text-sm"
                     >
                       {value}
                     </a>
@@ -437,7 +437,7 @@ function ContactPage() {
                   'We kick off if it\'s a good fit',
                 ].map((step, i) => (
                   <li key={step} className="flex items-start gap-3 text-zinc-400 text-sm">
-                    <span className="flex-shrink-0 h-5 w-5 rounded-full bg-yellow-400/20 border border-yellow-400/30 text-yellow-400 text-xs flex items-center justify-center font-bold mt-0.5">
+                    <span className="flex-shrink-0 h-5 w-5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center justify-center font-bold mt-0.5">
                       {i + 1}
                     </span>
                     {step}

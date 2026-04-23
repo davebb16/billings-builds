@@ -94,24 +94,41 @@ export function SpaceBackground() {
     // ── draw helpers ──────────────────────────────────────────────────────────
 
     function drawNebula() {
+      // red — top-left
       const g1 = cx.createRadialGradient(w * 0.15, h * 0.22, 0, w * 0.15, h * 0.22, w * 0.52)
-      g1.addColorStop(0,   'rgba(220, 38, 38, 0.11)')
-      g1.addColorStop(0.4, 'rgba(220, 38, 38, 0.06)')
+      g1.addColorStop(0,   'rgba(220, 38, 38, 0.09)')
+      g1.addColorStop(0.4, 'rgba(220, 38, 38, 0.05)')
       g1.addColorStop(1,   'rgba(0,0,0,0)')
       cx.fillStyle = g1
       cx.fillRect(0, 0, w, h)
 
       const g2 = cx.createRadialGradient(w * 0.88, h * 0.78, 0, w * 0.88, h * 0.78, w * 0.42)
-      g2.addColorStop(0,   'rgba(244, 63, 94, 0.09)')
-      g2.addColorStop(0.5, 'rgba(244, 63, 94, 0.04)')
+      g2.addColorStop(0,   'rgba(244, 63, 94, 0.05)')
+      g2.addColorStop(0.5, 'rgba(244, 63, 94, 0.02)')
       g2.addColorStop(1,   'rgba(0,0,0,0)')
       cx.fillStyle = g2
       cx.fillRect(0, 0, w, h)
 
       const g3 = cx.createRadialGradient(w * 0.5, h * 0.5, 0, w * 0.5, h * 0.5, w * 0.6)
-      g3.addColorStop(0,   'rgba(80, 10, 10, 0.07)')
+      g3.addColorStop(0,   'rgba(80, 10, 10, 0.04)')
       g3.addColorStop(1,   'rgba(0,0,0,0)')
       cx.fillStyle = g3
+      cx.fillRect(0, 0, w, h)
+
+      // violet/indigo — top-right, counterpoint to the red top-left
+      const g4 = cx.createRadialGradient(w * 0.84, h * 0.12, 0, w * 0.84, h * 0.12, w * 0.62)
+      g4.addColorStop(0,   'rgba(99, 102, 241, 0.10)')
+      g4.addColorStop(0.45, 'rgba(99, 102, 241, 0.04)')
+      g4.addColorStop(1,   'rgba(0,0,0,0)')
+      cx.fillStyle = g4
+      cx.fillRect(0, 0, w, h)
+
+      // deep violet — bottom-left, balances the rose bottom-right
+      const g5 = cx.createRadialGradient(w * 0.18, h * 0.85, 0, w * 0.18, h * 0.85, w * 0.36)
+      g5.addColorStop(0,   'rgba(124, 58, 237, 0.08)')
+      g5.addColorStop(0.5, 'rgba(124, 58, 237, 0.03)')
+      g5.addColorStop(1,   'rgba(0,0,0,0)')
+      cx.fillStyle = g5
       cx.fillRect(0, 0, w, h)
     }
 
