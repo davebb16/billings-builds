@@ -59,7 +59,7 @@ export function Navbar() {
             <Link to="/contact">
               <Button
                 size="sm"
-                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer shadow-md shadow-red-500/10 transition-all duration-200 backdrop-blur-sm"
+                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer shadow-lg shadow-red-500/25 transition-all duration-200"
               >
                 Start a Project
               </Button>
@@ -90,7 +90,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full mt-2 bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer backdrop-blur-sm">
+              <Button className="w-full mt-2 bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer">
                 Start a Project
               </Button>
             </Link>

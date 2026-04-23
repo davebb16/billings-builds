@@ -122,7 +122,7 @@ function HeroSection() {
 
       <div className="section-container relative z-10 flex flex-col items-center text-center pt-28 pb-20">
         {/* Badge — neutral, only the dot is red */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/12 bg-white/[0.04] text-zinc-400 text-sm font-medium mb-10 backdrop-blur-sm">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/12 bg-white/[0.04] text-zinc-400 text-sm font-medium mb-10">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-60" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
@@ -150,7 +150,7 @@ function HeroSection() {
           <Link to="/contact">
             <Button
               size="lg"
-              className="bg-red-500 text-white hover:bg-red-400 font-semibold px-8 py-5 text-sm shadow-md shadow-red-500/10 cursor-pointer transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm"
+              className="bg-red-500 text-white hover:bg-red-400 font-semibold px-8 py-5 text-sm cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
             >
               Start a Project
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -160,7 +160,7 @@ function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-8 py-5 text-sm cursor-pointer transition-all duration-200 bg-transparent backdrop-blur-sm"
+              className="border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-8 py-5 text-sm cursor-pointer transition-all duration-200 bg-transparent"
             >
               What I Build
             </Button>
@@ -319,7 +319,7 @@ function WhySection() {
             <Link to="/contact" className="inline-block mt-10">
               <Button
                 size="lg"
-                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer shadow-md shadow-red-500/10 transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm"
+                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
               >
                 Let's Talk
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -384,7 +384,7 @@ function CTASection() {
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="bg-red-500 text-white hover:bg-red-400 font-semibold px-10 py-5 text-sm cursor-pointer shadow-md shadow-red-500/10 transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm"
+                  className="bg-red-500 text-white hover:bg-red-400 font-semibold px-10 py-5 text-sm cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Start the Conversation
                   <ArrowRight className="ml-2 h-4 w-4" />

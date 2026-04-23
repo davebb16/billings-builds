@@ -343,7 +343,7 @@ function ContactForm() {
           size="lg"
           disabled={mutation.isPending}
           className={cn(
-            'w-full bg-red-500 text-white hover:bg-red-400 font-semibold text-base py-6 cursor-pointer backdrop-blur-sm',
+            'w-full bg-red-500 text-white hover:bg-red-400 font-semibold text-base py-6 cursor-pointer',
             'shadow-md shadow-red-500/10 transition-all duration-200',
             'disabled:opacity-60 disabled:cursor-not-allowed',
           )}
