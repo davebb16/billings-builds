@@ -167,7 +167,7 @@ function HeroSection() {
           </a>
         </div>
 
-        {/* Stats — smaller, more restrained */}
+        {/* Stats — smaller, more restrained 
         <div className="flex items-center gap-8 sm:gap-10">
           {[
             { value: '20+', label: 'Projects Shipped' },
@@ -187,7 +187,7 @@ function HeroSection() {
               <span className="text-xs text-zinc-600 whitespace-nowrap">{stat.label}</span>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
 
       {/* Scroll hint */}
