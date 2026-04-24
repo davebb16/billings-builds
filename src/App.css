@@ -1,5 +1,26 @@
 @config "../tailwind.config.ts";
 
+@font-face {
+  font-family: 'Conneqt';
+  src: url('@/assets/fonts/Conneqt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conneqt';
+  src: url('@/assets/fonts/Conneqt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conneqt';
+  src: url('@/assets/fonts/Conneqt-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
 @plugin "tailwindcss-animate";
 @import "tailwindcss";
 @import "tw-animate-css";

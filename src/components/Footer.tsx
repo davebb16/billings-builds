@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
-import { Zap, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { Signature } from '@/components/Signature'
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -28,16 +29,8 @@ export function Footer() {
     <footer className="border-t border-white/8 bg-zinc-950">
       <div className="section-container py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
-          <div className="flex items-center gap-2.5">
-            <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center">
-              <Zap className="h-3.5 w-3.5 text-white fill-white" />
-            </div>
-            <span className="font-bold text-sm text-white">
-              Billings<span className="text-red-500">Builds</span>
-              <span className="text-zinc-500 font-normal ml-1">LLC</span>
-            </span>
-          </div>
+          {/* Signature */}
+          <Signature className="h-8 lg:h-11 w-auto text-zinc-300  transition-colors duration-200" />
 
           {/* Nav */}
           <div className="flex items-center gap-6 text-sm text-zinc-500">

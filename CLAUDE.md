@@ -63,7 +63,10 @@ You are working in the **Billings Builds** site — a React + Vite + TypeScript 
 ### Custom (`/src/components/`)
 | Component | Purpose |
 |---|---|
-<!-- Add components here as they are built -->
+| `SignatureLogo` | Inline SVG of David Billings' handwritten signature — uses `currentColor` for theming |
+| `Navbar` | Site nav with logo, links, CTA |
+| `Footer` | Site footer with signature, nav links, social icons |
+| `SpaceBackground` | Animated star/space canvas background for hero section |
 
 ### shadcn Primitives (`/src/components/ui/`)
 <!-- List installed shadcn components as they are added -->

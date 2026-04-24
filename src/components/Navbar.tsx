@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import bbLogo from '@/assets/images/bb-logo.png'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -32,12 +33,19 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 cursor-pointer group">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center shadow-lg shadow-red-500/25">
-              <Zap className="h-4 w-4 text-white fill-white" />
-            </div>
-            <span className="font-bold text-base tracking-tight text-white">
-              Billings<span className="text-red-500">Builds</span>
+            <img src={bbLogo} alt="Billings Builds" className="h-8 w-8 rounded-lg" />
+            <div className='flex gap-1'>
+            <span
+              className="text-white text-base tracking-tight"
+              style={{ fontFamily: "'Conneqt', sans-serif", fontWeight: 700 }}
+            >
+              Billings
             </span>
+            <span
+              className="text-red-500 text-base tracking-tight"
+              style={{ fontFamily: "'Conneqt', sans-serif", fontWeight: 700 }}
+            >Builds</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
