@@ -15,9 +15,10 @@ import {
   AlertCircle,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CtaButton } from '@/components/CtaButton'
+import { SectionBadge } from '@/components/SectionBadge'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Badge } from '@/components/ui/badge'
 import {
   Form,
   FormControl,
@@ -33,7 +34,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { cn } from '@/lib/utils'
 
 export const Route = createFileRoute('/contact')({
   head: () => ({
@@ -364,15 +364,11 @@ function ContactForm() {
         )}
 
         {/* Submit */}
-        <Button
+        <CtaButton
           type="submit"
           size="lg"
           disabled={mutation.isPending}
-          className={cn(
-            'w-full bg-red-500 text-white hover:bg-red-400 font-semibold text-base py-6 cursor-pointer',
-            'shadow-md shadow-red-500/10 transition-all duration-200',
-            'disabled:opacity-60 disabled:cursor-not-allowed',
-          )}
+          className="w-full text-base py-6 hover:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {mutation.isPending ? (
             <>
@@ -385,7 +381,7 @@ function ContactForm() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </>
           )}
-        </Button>
+        </CtaButton>
 
         <p className="text-center text-xs text-zinc-600">
           By submitting, you agree to be contacted about your project. No spam, ever.
@@ -403,12 +399,7 @@ function ContactPage() {
       {/* Header */}
       <div className="section-container mb-16">
         <div className="text-center max-w-2xl mx-auto">
-          <Badge
-            variant="outline"
-            className="border-white/10 text-zinc-500 bg-transparent mb-4"
-          >
-            Get in Touch
-          </Badge>
+          <SectionBadge>Get in Touch</SectionBadge>
           <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5">
             Let's Build{' '}
             <span className="accent-gradient-text">Something Great</span>

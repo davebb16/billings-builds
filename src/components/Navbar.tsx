@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { CtaButton } from '@/components/CtaButton'
 import bbLogo from '@/assets/images/bb-logo.png'
 
 const navLinks = [
@@ -65,12 +65,9 @@ export function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Link to="/contact">
-              <Button
-                size="sm"
-                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer shadow-lg shadow-red-500/25 transition-all duration-200"
-              >
+              <CtaButton size="sm" className="hover:translate-y-0 shadow-lg shadow-red-500/25">
                 Start a Project
-              </Button>
+              </CtaButton>
             </Link>
           </div>
 
@@ -98,9 +95,9 @@ export function Navbar() {
               </Link>
             ))}
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full mt-2 bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer">
+              <CtaButton className="w-full mt-2 hover:translate-y-0">
                 Start a Project
-              </Button>
+              </CtaButton>
             </Link>
           </div>
         )}

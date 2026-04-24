@@ -16,7 +16,9 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { CtaButton } from '@/components/CtaButton'
+import { SectionBadge } from '@/components/SectionBadge'
+
 import { SpaceBackground } from '@/components/SpaceBackground'
 
 export const Route = createFileRoute('/')({
@@ -171,21 +173,18 @@ function HeroSection() {
         </p>
 
         {/* CTAs — smaller, less aggressive */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 mb-12">
-          <Link to="/contact">
-            <Button
-              size="lg"
-              className="bg-red-500 text-white hover:bg-red-400 font-semibold px-8 py-5 text-sm cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
-            >
+        <div className="flex flex-col sm:flex-row items-center gap-3 mb-12 w-full sm:w-auto">
+          <Link to="/contact" className="w-full sm:w-auto">
+            <CtaButton size="lg" className="w-full sm:w-auto px-8 py-5 text-sm">
               Start a Project
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            </CtaButton>
           </Link>
-          <a href="#services">
+          <a href="#services" className="w-full sm:w-auto">
             <Button
               variant="outline"
               size="lg"
-              className="border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-8 py-5 text-sm cursor-pointer transition-all duration-200 bg-transparent"
+              className="w-full sm:w-auto border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-8 py-5 text-sm cursor-pointer transition-all duration-200 bg-transparent"
             >
               What I Build
             </Button>
@@ -233,9 +232,7 @@ function ServicesSection() {
     <section id="services" className="py-24 sm:py-32 border-t border-white/5">
       <div className="section-container">
         <div className="mb-14 max-w-2xl">
-          <Badge variant="outline" className="border-white/10 text-zinc-500 bg-transparent mb-4">
-            Services
-          </Badge>
+          <SectionBadge>Services</SectionBadge>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
             What I Build
           </h2>
@@ -279,9 +276,7 @@ function ProcessSection() {
     <section className="py-24 sm:py-32 border-t border-white/5">
       <div className="section-container">
         <div className="mb-14 max-w-2xl">
-          <Badge variant="outline" className="border-white/10 text-zinc-500 bg-transparent mb-4">
-            Process
-          </Badge>
+          <SectionBadge>Process</SectionBadge>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
             How We Work Together
           </h2>
@@ -319,12 +314,7 @@ function WhySection() {
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <Badge
-              variant="outline"
-              className="border-white/10 text-zinc-500 bg-transparent mb-4"
-            >
-              Why Billings Builds
-            </Badge>
+            <SectionBadge>Why Billings Builds</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
               Senior craft.{' '}
               <span className="accent-gradient-text">Freelance agility.</span>
@@ -342,13 +332,10 @@ function WhySection() {
               ))}
             </ul>
             <Link to="/contact" className="inline-block mt-10">
-              <Button
-                size="lg"
-                className="bg-red-500 text-white hover:bg-red-400 font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
-              >
+              <CtaButton size="lg">
                 Let's Talk
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </CtaButton>
             </Link>
           </div>
 
@@ -405,21 +392,18 @@ function CTASection() {
               Tell me about your project and let's see if we're a good fit. No pressure, no
               commitment — just a conversation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="bg-red-500 text-white hover:bg-red-400 font-semibold px-10 py-5 text-sm cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
-                >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+              <Link to="/contact" className="w-full sm:w-auto">
+                <CtaButton size="lg" className="w-full sm:w-auto px-10 py-5 text-sm">
                   Start the Conversation
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </CtaButton>
               </Link>
-              <a href="mailto:dbillings100@gmail.com">
+              <a href="mailto:dbillings100@gmail.com" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-10 py-5 text-sm cursor-pointer bg-transparent"
+                  className="w-full sm:w-auto border-white/12 text-zinc-400 hover:text-white hover:bg-white/5 hover:border-white/20 font-medium px-10 py-5 text-sm cursor-pointer bg-transparent"
                 >
                   Email Directly
                 </Button>
