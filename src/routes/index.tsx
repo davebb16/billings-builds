@@ -17,10 +17,35 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
 import { SpaceBackground } from '@/components/SpaceBackground'
 
 export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { title: 'Billings Builds | Freelance Full-Stack Developer' },
+      {
+        name: 'description',
+        content:
+          'Freelance developer crafting top-tier websites, APIs, and mobile apps. Full-stack React, Node.js, and React Native development. From idea to production — fast.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Billings Builds | Freelance Full-Stack Developer' },
+      {
+        property: 'og:description',
+        content:
+          'Freelance developer crafting top-tier websites, APIs, and mobile apps. Full-stack React, Node.js, and React Native development. From idea to production — fast.',
+      },
+      { property: 'og:url', content: 'https://billingsbuilds.com/' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Billings Builds | Freelance Full-Stack Developer' },
+      {
+        name: 'twitter:description',
+        content:
+          'Freelance developer crafting top-tier websites, APIs, and mobile apps. From idea to production — fast.',
+      },
+    ],
+    links: [{ rel: 'canonical', href: 'https://billingsbuilds.com/' }],
+  }),
   component: HomePage,
 })
 

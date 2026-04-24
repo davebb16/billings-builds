@@ -36,6 +36,32 @@ import {
 import { cn } from '@/lib/utils'
 
 export const Route = createFileRoute('/contact')({
+  head: () => ({
+    meta: [
+      { title: 'Start a Project | Billings Builds' },
+      {
+        name: 'description',
+        content:
+          'Get in touch with Billings Builds. Start your web, mobile, or API project with senior-level craft and fast turnaround. Response within 24 hours.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Start a Project | Billings Builds' },
+      {
+        property: 'og:description',
+        content:
+          'Get in touch with Billings Builds. Start your web, mobile, or API project with senior-level craft and fast turnaround. Response within 24 hours.',
+      },
+      { property: 'og:url', content: 'https://billingsbuilds.com/contact' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Start a Project | Billings Builds' },
+      {
+        name: 'twitter:description',
+        content:
+          'Get in touch with Billings Builds. Start your web, mobile, or API project with senior-level craft and fast turnaround.',
+      },
+    ],
+    links: [{ rel: 'canonical', href: 'https://billingsbuilds.com/contact' }],
+  }),
   component: ContactPage,
 })
 
