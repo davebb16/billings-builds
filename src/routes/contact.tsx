@@ -76,7 +76,8 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? ''
 // ─── Schema ───────────────────────────────────────────────────────────────────
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().optional(),
   projectType: z.string().min(1, 'Please select a project type'),
@@ -133,9 +134,11 @@ async function sendEmail(data: ContactFormValues) {
     EMAILJS_SERVICE_ID,
     EMAILJS_TEMPLATE_ID,
     {
-      from_name: data.name,
+      from_name: `${data.firstName} ${data.lastName}`,
+      first_name: data.firstName,
+      last_name: data.lastName,
       from_email: data.email,
-      phone: data.phone ?? 'Not provided',
+      phone: data.phone || 'Not provided',
       project_type: projectTypes.find((p) => p.value === data.projectType)?.label ?? data.projectType,
       budget: budgetRanges.find((b) => b.value === data.budget)?.label ?? data.budget,
       message: data.message,
@@ -151,7 +154,8 @@ function ContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
       message: '',
@@ -196,19 +200,19 @@ function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" noValidate>
-        {/* Name + Email */}
+        {/* First + Last name */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <FormField
             control={form.control}
-            name="name"
+            name="firstName"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Full Name <span className="text-red-400">*</span>
+                  First Name <span className="text-red-400">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="John Smith"
+                    placeholder="John"
                     className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
                     {...field}
                   />
@@ -219,16 +223,15 @@ function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="email"
+            name="lastName"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300 text-sm font-medium">
-                  Email <span className="text-red-400">*</span>
+                  Last Name <span className="text-red-400">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
-                    type="email"
-                    placeholder="you@example.com"
+                    placeholder="Smith"
                     className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
                     {...field}
                   />
@@ -238,6 +241,28 @@ function ContactForm() {
             )}
           />
         </div>
+
+        {/* Email */}
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-zinc-300 text-sm font-medium">
+                Email <span className="text-red-400">*</span>
+              </FormLabel>
+              <FormControl>
+                <Input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-zinc-600 focus:border-red-500/50 focus:ring-red-500/20 transition-colors"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage className="text-red-400 text-xs" />
+            </FormItem>
+          )}
+        />
 
         {/* Phone */}
         <FormField
