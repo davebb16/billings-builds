@@ -98,7 +98,7 @@ const contactInfo = [
   },
   {
     icon: Clock,
-    label: 'Response Time',
+    label: 'Typical Response Time',
     value: 'Within 24 hours',
     href: null,
   },
